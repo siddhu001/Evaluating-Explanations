@@ -1,0 +1,234 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<html>
+    <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      /* <![CDATA[ */
+        .head {
+          font-weight: bold;
+          width: 150px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          margin-bottom: 0px;
+        }
+        .container{
+          max-width: 1000px;
+          width: 100%;
+          padding-right: 1.5%;
+          padding-left: 1.5%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .box {
+          float: center;
+          width: 50%;
+          padding: 0px 5% 0px 5%;
+        }
+        #div_border {
+            width : 100%;
+            position: relative;
+          min-height : 20%;
+          border : 2px solid;
+        }
+      /* ]]> */
+    </style>
+  <style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.topright {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  font-size: 100%;
+}
+
+.topleft {
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  font-size: 100%;
+}
+
+.timer{
+     font-weight: bold;
+     font-size:100%;
+     color:#FF0000;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+
+.blink {
+  animation: blink 1s steps(1, end) infinite;
+  font-weight: bold;
+     font-size:100%;
+     color:#FF0000;
+}
+
+.float-container {
+  position: relative;
+    border: 3px solid #fff;
+}
+
+.float-child {
+    width: 49%;
+    float: left;
+    border: 2px solid;
+
+}  
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+</style>
+
+    </head>
+     <body>
+   <div>
+           <div id="divMenu" style="width: 20%; float: left;">
+                </div>
+        <div class="container">
+      <div style="height: 6%"></div>
+      
+      <div id="content">
+          <h1> {{heading_str}} </h1>
+
+        <form action="formsubmit" method="post" id="f">
+          <p class="form form-reset">
+            <div class="topleft">Example Number: {{example_index}}<br>Bonus: ${{bonus}}<br><A HREF="instruction" onClick="return popup(this, 'notes')">Review instructions</A></div>
+            <div class="topright">Number of examples flipped: {{flips}}<br>Correct guesses: {{correct_guesses}} <br> <b> Time left : <input name="timer" id="timer" style="width: 40%;height: 14%;border-width: inherit;"  type="text" value="{{time_left}}" readonly class="timer"> </b></div>
+            <script type="application/javascript">
+               const timerElement = document.getElementById("timer");
+               var timerCounter = parseInt("{{time_left_sec}}");
+               const interval = setInterval(() => {
+                   if (timerCounter <= 0) {
+                       // flash('Moving to prediction phase')
+                       doneNext ();
+                       clearInterval(interval);
+                   }
+                   else if (timerCounter <= 20) {
+                       timerElement.className = "blink"; 
+                   }
+                   timerCounter = timerCounter - 1;
+                   var timerMin = parseInt(timerCounter/60);
+                   var timerSec = timerCounter - (60*timerMin);
+                   timerElement.value = timerMin + "m" + timerSec + "s";
+               }, 1000);
+            function doneNext () {
+                document.getElementById('div_border').style="-webkit-user-modify: read-only;";
+                document.getElementById('Next').style="display: unset;";
+                document.getElementById('Editing').innerHTML = '<span style="background-color: rgb(255,0, 0)">Timeout! Please select the Next button to move to the next example.</span>';
+            }
+           </script>
+          <!--  <script> 
+              $(function(){
+                $("#includedContent").load("write_explanation"); 
+              });
+              </script>  -->
+            {{ radio_str|safe}}
+            {{ guess_text|safe}}
+            <div class="clearfix">
+             {{overall_feedback| safe}}
+           </div>
+            <!-- <p> {{ result|safe}} </p> -->
+            
+            {{ attention_explanation|safe}}
+            {{edit_review|safe}}
+            {{incorrect_edit|safe}}
+            {{global_explanation|safe}}
+            {{div_str|safe}} {{output_text|safe}}</div>
+            <textarea name="text" id="hiddeninput" readonly style="display:none;"> {{output_text}}</textarea>
+            <script type="text/javascript">
+            let typingTimer;                //timer identifier
+            let doneTypingInterval = 3000;  //time in ms (5 seconds)
+            let myInput = document.getElementById('div_border');
+
+            //on keyup, start the countdown
+            myInput.addEventListener('keyup', () => {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(doneTyping, doneTypingInterval);
+            });
+
+            myInput.addEventListener('keydown', function(e) {
+              if(e.keyCode == 13 && e.shiftKey) {
+                doneTyping();
+              }
+            });
+
+            //user is "finished typing," do something
+            function doneTyping () {
+              if (document.getElementById('div_border').style!="-webkit-user-modify: read-only;"){
+                if ($('#div_border').html()!=$('#hiddeninput').val()){
+                  document.getElementById('div_border').style="-webkit-user-modify: read-only;";
+                  document.getElementById('submit').click();
+                }
+              }
+            };
+            function doneSelect () {
+              if (document.getElementById('div_border').style!="-webkit-user-modify: read-only;"){
+                  document.getElementById('div_border').style="-webkit-user-modify: read-only;";
+                  document.getElementById('submit').click();
+              }
+            };
+            $(function(){
+                $('#submit').click(function () {
+                    var mysave = $('#div_border').html();
+                    $('#hiddeninput').val(mysave);
+                });
+            });
+            function changeColor(index){
+              var ea = document.getElementsByClassName('importance-word');
+              ea[index].style.backgroundColor = "rgb(255, 255, 255)";
+            }
+            $('.importance-word').on('DOMSubtreeModified',function(){
+              changeColor($(this).index());
+            });
+            function popup(mylink, windowname) {
+             if (! window.focus)return true;
+              var href;
+             if (typeof(mylink) == 'string') href=mylink;
+             else href=mylink.href; 
+             window.open(href, windowname, 'width=500,height=400,scrollbars=yes'); 
+             return false;
+            }
+            </script>
+            <input name="submit_btn" type="submit" value="Submit" id="submit" style="display:none;"/></p>
+            <input name="submit_btn" type="submit" value="Previous"  style="display:none;"/>     {{next_str| safe}}
+            
+          </p>
+        </form>
+        <br>
+        <pre style="background-color: transparent; border: 0">
+        </pre>
+      </div>
+    </div>
+  </div>
+
+<!--<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>-->
+       
+    </body>
+</html>

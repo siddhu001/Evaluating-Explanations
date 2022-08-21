@@ -1,0 +1,136 @@
+<html>
+    <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      /* <![CDATA[ */
+        .head {
+          font-weight: bold;
+          width: 150px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          margin-bottom: 0px;
+        }
+        .item {
+          width: 144px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          padding-left: 10px;
+          margin-bottom: 0px;
+        }
+        div {
+          max-width: 1000px;
+          width: 100%;
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        table {
+          border-width: 1px;
+          border-spacing: 0px;
+          border-style: outset;
+          border-color: gray;
+          border-collapse: collapse;
+          background-color: white;
+        }
+        th {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: PowderBlue;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+        td {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: white;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+      /* ]]> */
+    </style>
+  <style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style>
+
+    </head>
+     <body>
+   <div>
+           <div id="divMenu" style="width: 200px; float: left;">
+                </div>
+    <div class="container">
+      <div style="height: 20px"></div>
+      <div id="content">
+          <h1> Games for evaluating explanations </h1>
+
+
+        <form action="" method="post">
+          <p class="form form-reset">
+            <p>Welcome to the study. <b>You have been selected for this study based on our recruitment test.</b> Our study investigates <b> how well people understand a deception detection AI system</b>.  The AI system classifies, with a reasonable accuracy, hotel reviews as fake or genuine.</p>  
+
+            <p>The study comprises 30 hotel reviews, of which some are fake and others are genuine. Fake reviews are written by people who have never visited the discussed hotel and were paid to write their review. For each review, <b>you will first have to guess the output of the deception detection AI system</b>. Initially, you will likely be clueless about the AI system prediction. Once you guess the AI system output for an example, you’ll immediately see the AI system prediction, and in 20 out of 30 examples,  you’ll also see an explanation. We use an explanation technique that highlights words thought to be responsible for the particular prediction.  As you see more examples and explanations, we hope that you might be able to better guess what the AI system will predict. Subjects will be paid a bonus of $0.10 for each correct guess.</p> 
+
+            <p>After you guess the AI system output and see the predicted output, you’ll be prompted to <b>edit the example in an attempt to lower the confidence of the originally predicted class</b>. Say, if the original prediction was “Fake” with a confidence of 93%, your goal is to edit the example so that the AI system’s confidence towards the “Fake” class is reduced. <b>Ideally, you want to reduce the confidence so much so that the AI system no longer predicts the original label</b> of “Fake” (i.e., less than 50% confidence towards the fake label). Subjects will be paid a bonus of $0.20 for each such example where the AI system no longer predicts the original label. Workers who skip the editing exercise will not be compensated.</p>
+
+            <hr>
+            <p><b>What are allowed edits?</b> You can edit the review but you have to preserve the experience about the hotel conveyed through the review. If the review is positive, negative or mixed, then the edited version should maintain that stance. You can paraphrase any part of the review. You can also remove or change any information not relevant to the experience about the hotel. Below are a few examples of valid edits: </p>
+            <ol>
+              <li>Changing “My husband and I” to “We” is okay as it doesn’t change the experience about the hotel. </li>
+              <li>Editing the “the bathroom was untidy” to “the bathroom was not clean” is okay as you are restating the original review differently.</li>
+              <li>Inventing new details or removing details not related to the hotel is okay, e.g., adding “My son was sick throughout the trip”.</li>
+            </ol>
+            <p>Here are a few examples of edits that are <b><u>not</u></b> valid: </p>
+            <ol>
+              <li>Changing the “the bathroom was untidy” to “the lift was untidy” is not permitted as it affects the experience for potential guests.</li>
+              <li>Adding new details like “The staff was unfriendly” is also not okay, as this detail influences the experience of potential visitors.</li>
+            </ol>
+            <hr>
+            <p><b>Workers will not be compensated if:</b> </p>
+            <ol>
+              <li>They skip the editing exercise. </li>
+              <li>Their edits are not in line with the instructions.</li>
+              <li>They do not read the reviews before guessing model prediction (i.e. they spend less than five seconds to guess model prediction). </li>
+            </ol>
+            <hr>
+
+            <p><input type="checkbox" name="options2" id="option1" value="Research"> I understand that my activity—i.e., answers I submit, attempts I make to flip the predictions, and the time I take for these — will be recorded for research purposes. </input></p>
+            <p>Use your Worker ID as username for survey. At the end of the survey, you will receive a code to receive credit for taking our survey. You can not attempt the survey more than once.</p>
+            <p>Enter your username: <textarea name="text" style="width: 20%;height: 25px;">{{name}}</textarea></p>
+            <p><input name="Submit" type="submit" value="Start" /></p></p>
+            <p>{{ error_message}}</p>
+          </p>  
+        </form>
+        <pre style="background-color: transparent; border: 0">
+        </pre>
+      </div>
+    </div>
+  </div>
+
+<!--<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>-->
+       
+    </body>
+</html>

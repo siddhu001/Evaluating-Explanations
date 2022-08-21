@@ -1,0 +1,130 @@
+<html>
+    <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      /* <![CDATA[ */
+        .head {
+          font-weight: bold;
+          width: 150px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          margin-bottom: 0px;
+        }
+        .item {
+          width: 144px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          padding-left: 10px;
+          margin-bottom: 0px;
+        }
+        .container {
+          max-width: 1000px;
+          width: 100%;
+          padding-right: 15px;
+          padding-left: 15px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        table {
+          border-width: 1px;
+          border-spacing: 0px;
+          border-style: outset;
+          border-color: gray;
+          border-collapse: collapse;
+          background-color: white;
+        }
+        th {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: PowderBlue;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+        td {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: white;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+      /* ]]> */
+    </style>
+  <style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style>
+
+    </head>
+     <body>
+   <div>
+           <div id="divMenu" style="width: 200px; float: left;">
+                </div>
+    <div class="topleft">Example Number: {{example_index}}</div>
+    <div class="topright">Number of examples flipped: {{flips}}<br>Correct guesses: {{correct_guesses}}</div>
+    <div class="container">
+      <div style="height: 20px"></div>
+      <div id="content">
+          <h1> Games for evaluating explanations </h1>
+        <script>    
+             window.setTimeout(function(){
+
+               // Move to a new location or you can do something else
+               window.location.href = '{{redirect_url}}';
+
+               }, 5000);
+
+         </script>
+
+        <form action="/formtest" method="post">
+          <p class="form form-reset">
+            Please enter your input:<br>
+            
+            <textarea name="text" style="width: 100%;height: 50px;" readonly>{{output_text}}</textarea>
+            {{ radio_str|safe}}
+            <p>{{ guess_text|safe}} </p>
+            <p>To test model's prediction on the input example, proceed by selecting Submit</p>
+            <input name="submit_btn" type="submit" value="Submit"  disabled /></p>
+          </p>
+        </form>
+        <p> {{ result|safe}} </p>
+        <br>
+        <pre style="background-color: transparent; border: 0">
+        </pre>
+      </div>
+    </div>
+  </div>
+
+<!--<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>-->
+       
+    </body>
+</html>

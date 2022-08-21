@@ -1,0 +1,539 @@
+<html>
+    <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+      /* <![CDATA[ */
+        .head {
+          font-weight: bold;
+          width: 150px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          margin-bottom: 0px;
+        }
+        .item {
+          width: 144px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: lightgrey;
+          padding: 4px;
+          padding-left: 10px;
+          margin-bottom: 0px;
+        }
+        .buffer {
+            padding-top: 65px;
+        }
+
+        .spectrum {
+            margin: auto;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .spectrum-resize {
+            width:80%
+        }
+
+        .spectrum-text {
+            margin: 25px 100px 0;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .button-buffer {
+            margin: 10px 25px;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .round-btn {
+            border-radius: 100%;
+            font-size: 10px;
+        }
+        /* end of landing page */
+
+        a {
+            color: #4188ff;
+            text-decoration: none;
+        }
+
+        body {
+            color: #556270;
+            font-size:16px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+            color: #fff;
+            background-color: #FF6B6B;
+            border-color: #FF6B6B;
+            font-family: 'Futura', sans-serif;
+        }
+
+        .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+            color: #fff;
+            background-color: #4ECDC4;
+            border-color: #4ECDC4;
+            font-family: 'Futura', sans-serif;
+        }
+
+        .btn-info, .btn-info:hover, .btn-info:active, .btn-info:visited {
+            color: #fff;
+            background-color: #4188ff;
+            border-color: #4188ff;
+            font-family: 'Futura', sans-serif;
+        }
+
+        .form-check-label {
+            margin-left: 10px;
+            margin-top: 2px;
+            margin-bottom: 0;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+        }
+
+        .text-header {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;  
+            color: #474B4E;
+        }
+
+        .highlight {
+            background-color:#C44D58;
+            color:white;
+        }
+
+        .hint {
+            font-family: 'Futura', sans-serif;
+        }
+
+        .text-body {
+            font-family: '', sans-serif;
+            font-size: 15px;  
+            color: #474B4E;
+        }
+
+        .summary-button-group {
+            margin-bottom: 30px;
+        }
+
+        .result-content {
+            margin-left: 300px;
+            margin-bottom: 10px;
+        }
+
+        .result-button {
+            margin-left:800px;
+        }
+
+        .center {
+            margin: auto;
+        }
+
+        .predict {
+            display: inline;
+            margin: 15px 15px 0 15px;
+        }
+
+        .label {
+            font-size: 18px;
+        }
+
+        .red {
+            color: darkred;
+        }
+
+        .attention-box {
+            border: 2px dashed #474b4e;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .dialogue-box {
+            border: 2px dashed #474b4e;
+            padding: 25px;
+            margin: 20px 10px;
+        }
+
+        .note-width {
+            width:;
+        }
+
+        .jumbotron {
+            padding: 2rem 2rem;
+            background-color: transparent;
+        }
+
+        .gray-resize {
+            padding:5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .push {
+          height: 120px;
+        }
+
+        .about {
+            text-align: left;
+        }
+
+        .container {
+            max-width: 1000px;
+        }
+
+        .consent-form {
+            line-height: 1.1;
+        }
+
+        .asterick {
+            color: #C44D58;
+            display:inline;
+        }
+
+
+        .survey-code {
+            display: inline;
+            width: 55%
+        }
+
+        .hide-btn {
+            display: none;
+        }
+
+        .home {
+            margin: 130px 50px 50px 50px;
+        }
+
+        .scale-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            width:100%;
+        }
+
+        /*.spectrum-option {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }*/
+
+
+        .wrapper {
+            position:relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .overlay:before {
+          content: ' ';
+          display: block;
+          /* adjust 'height' to position overlay content vertically */
+          height: 50%;
+        }
+
+        .spectrum-option {
+            /*border-radius: 50%;
+            padding: 8px;*/
+            border-radius: 50%;
+            /* box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 3px 0 0 #348FD2, 0 6px 8px 1px rgba(0, 0, 0, 0.5);*/
+            /* background-color: #39B3D7; */
+        }
+
+
+        .survey-question {
+            font-weight: bold;
+        }
+
+        .survey-option {
+            padding-left: 1.5%;
+            padding-bottom: 1.5%;
+            font-weight: 400;
+        }
+
+        .spectrum-toggle {
+            border-radius: 50%;
+            line-height: 0.6;
+            font-size: 20px;
+        }
+
+        .hint-content {
+            padding: 5px 30px 0 30px;
+        }
+
+        .review-content {
+            padding: 10px;
+        }
+
+
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .worker-id {
+            display: inline;
+            width: 45%
+        }
+
+        .next-btn {
+            float: right;
+            margin: 25px;
+        }
+
+        .answer {
+            padding:2px;
+        }
+
+        .answer-content {
+            color: darkred;
+            font-weight:bold;
+        }
+
+        .predict-content {
+            color: darkred;
+            padding:10px;
+        }
+
+
+
+        .none {
+            display: none;
+        }
+
+        .rules {
+            margin-left: 70px;
+            margin-right: 50px;
+            padding-bottom: 30px;
+            padding-top: 20px;
+        }
+
+        .rules-training {
+            margin-left: 70px;
+            margin-right: 50px;
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+
+        .instructions {
+            padding: 2rem 2rem;
+        }
+
+        .instruction-box {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-instruction {
+            margin-top:30px;
+            margin-bottom: 30px;
+        }
+
+        .info {
+            margin: 15px;
+        }
+
+        .attention {
+            margin-left: 130px;
+            margin-right: 130px;
+        }
+
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 5px;
+          width: 100%;
+         }
+
+        .summary {
+          font: 15px sans-serif;
+          margin-top: 50px;
+        }
+
+        .bar rect {
+          shape-rendering: crispEdges;
+        }
+
+        .bar text {
+          fill: #999999;
+        }
+
+        .axis path, .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+        }
+        table {
+          border-width: 1px;
+          border-spacing: 0px;
+          border-style: outset;
+          border-color: gray;
+          border-collapse: collapse;
+          background-color: white;
+        }
+        th {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: PowderBlue;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+        td {
+          border-width: 1px;
+          padding: 6px;
+          border-style: inset;
+          border-color: gray;
+          background-color: white;
+          -moz-border-radius: 0px 0px 0px 0px;
+        }
+      /* ]]> */
+    </style>
+  <style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style>
+
+    </head>
+     <body style="max-width: 1000px;width: 100%;padding-left: 1.5%;padding-right: 1.5%;margin-left: auto;margin-right: auto;">
+<div class="jumbotron text-center gray-resize instruction-box attention-box">
+	Thank you for participating in this survey. <br>
+	Please answer the following questions.
+</div>
+<form action="survey" method="post" id="f">
+<!-- QUESTION User Acc Belief -->
+<label class="survey-question"><div class="asterick">*</div>1. Explanations helped me better understand the model.</label>
+<div class="survey-option">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="user_acc_belief" id="user_acc_belief_1" value="5" required="">
+		<label class="form-check-label" for="user_acc_belief_1">Strongly Agree</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="user_acc_belief" id="user_acc_belief_2" value="4" required="">
+		<label class="form-check-label" for="user_acc_belief_2">Agree</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="user_acc_belief" id="user_acc_belief_3" value="3" required="">
+		<label class="form-check-label" for="user_acc_belief_3">Undecided</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="user_acc_belief" id="user_acc_belief_4" value="2" required="">
+		<label class="form-check-label" for="user_acc_belief_4">Disagree</label>
+	</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="user_acc_belief" id="user_acc_belief_5" value="2" required="">
+        <label class="form-check-label" for="user_acc_belief_5">Strongly Disagree</label>
+    </div>
+</div>
+
+<!-- QUESTION AI Acc Belief -->
+<label class="survey-question"><div class="asterick">*</div>2. Explanations helped me to lower the model confidence.</label>
+<div class="survey-option">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="ai_acc_belief" id="ai_acc_belief_1" value="5" required="">
+		<label class="form-check-label" for="ai_acc_belief_1">Always</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="ai_acc_belief" id="ai_acc_belief_2" value="4" required="">
+		<label class="form-check-label" for="ai_acc_belief_2">Often</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="ai_acc_belief" id="ai_acc_belief_3" value="3" required="">
+		<label class="form-check-label" for="ai_acc_belief_3">Sometimes</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="ai_acc_belief" id="ai_acc_belief_4" value="2" required="">
+		<label class="form-check-label" for="ai_acc_belief_4">Rarely</label>
+	</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="ai_acc_belief" id="ai_acc_belief_4" value="1" required="">
+        <label class="form-check-label" for="ai_acc_belief_5">Never</label>
+    </div>
+</div>
+
+<!-- QUESTION Assistance Helpful A -->
+
+<label class="survey-question"><div class="asterick">*</div>3. Do you think the time given per review was adequate:</label>
+<div class="survey-option">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="assistance_a" id="assistance_a_1" value="1" required="">
+		<label class="form-check-label unbold" for="assistance_a_1" style="font-weight: 400;">Yes</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="assistance_a" id="assistance_a_0" value="0" required="">
+		<label class="form-check-label unbold" for="assistance_a_0" style="font-weight: 400;">No</label><br>
+        <label class="survey-question" for="assistance_b"> If no, what would be sufficient time per review? </label>
+        <textarea class="form-control" name="assistance_b" id="assistance_b" rows="3"></textarea>
+	</div>
+</div>
+
+
+<label class="survey-question"><div class="asterick">*</div>4. Were the instructions comprehensive?:</label>
+<div class="survey-option">
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="comprehensive_a" id="comprehensive_a_1" value="1" required="">
+        <label class="form-check-label unbold" for="comprehensive_a_1" style="font-weight: 400;">Yes</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="comprehensive_a" id="comprehensive_a_0" value="0" required="">
+        <label class="form-check-label unbold" for="comprehensive_a_0" style="font-weight: 400;">No</label><br>
+        <label class="survey-question" for="comprehensive_b"> If no, what else would you have liked to know. </label>
+        <textarea class="form-control" name="comprehensive_b" id="comprehensive_b" rows="3"></textarea>
+    </div>
+</div>
+
+
+
+
+<!-- QUESTION Feedback -->
+<div class="form-group">
+	
+	<label class="survey-question" for="feedback">5. Any other UI suggestions? </label>
+	
+	<textarea class="form-control" name="feedback" id="feedback" rows="3"></textarea>
+</div><br>
+<div class="form-group">
+    <input name="submit_btn" type="submit" value="Submit" id="submit" /></p>
+</div>
+</form>
+    </body>
+</html>
+
